@@ -1,0 +1,132 @@
+* {
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color:aquamarine;
+}
+
+header {
+    background:white;
+    padding: 20px;
+}
+
+header h1 {
+    color:blue;
+    text-align:center;
+    font-family:sans-serif;
+}
+
+.score-board {
+    margin: 20px auto;
+    border: 3px solid black;
+    border-radius :7px;
+    text-align:center;
+    width: 200px;
+    color:black;
+    font-size :25px;
+    font-family:sans-serif;
+    padding:40px 40px;
+    position:relative;
+}
+
+.badge {
+    background:blue;
+    color:whitesmoke;
+    font-size :19px;
+    padding:2px 2px;
+    font-family:sans-serif;
+    border-radius:10px;
+}
+
+#user1-label {
+    position:absolute;
+    top:0px;
+    left:-5px;
+}
+
+#user2-label {
+    position:absolute;
+    top:0px;
+    left:55px;
+}
+
+#computer-label {
+    position:absolute;
+    top:0px;
+    right:-5px;
+}
+
+.result {
+    font-weight:bold;
+    text-align:center;
+    margin-bottom:50px;
+}
+
+.choices {
+    text-align:center;
+}
+
+.choice {
+    border:solid black;
+    border-radius:1;
+    padding: 6px;
+    margin:0px 15px;
+    display:inline-block;
+}
+
+#r:hover {
+    cursor:pointer;
+    background:red;
+}
+
+#p:hover {
+   cursor:pointer;
+    background:blue; 
+}
+
+#s:hover {
+    cursor:pointer;
+    background:green;
+}
+
+#action-message{
+    text-align: center;
+    margin: 30px 0px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
