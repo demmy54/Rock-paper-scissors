@@ -5,8 +5,9 @@
 }
 body {
     font-family: sans-serif;
-    background: linear-gradient(135deg, #6a11cb, #2575fc);
+    background:url(image/images.png);
     color: #2d3436;
+    background-size: cover;
 }
 header {
     background: #ff6f61;
@@ -16,6 +17,7 @@ header {
 header h1 {
     color: #ffffff;
 }
+
 .score-board {
     margin: 20px auto;
     border: 3px solid #2d3436;
@@ -58,7 +60,7 @@ header h1 {
     font-weight: bold;
     text-align: center;
     margin-bottom: 40px;
-    color: #ffffff;
+    color: #070707;
 }
 .choices-container {
     display: flex;
@@ -94,5 +96,40 @@ header h1 {
     text-align: center;
     margin: 25px 0px;
     font-size: 22px;
-    color: #ffffff;
+    color: #111111;
+}
+.reset-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+#reset-btn {
+  background-color: #ff4757;
+  color: white;
+  font-size: 18px;
+  font-weight: bold;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+#reset-btn:hover {
+  background-color: #e84118;
+  transform: scale(1.05);
+}
+
+#reset-btn:active {
+  transform: scale(0.95);
+}
+#rounds-left {
+  font-size: 27px;
+  font-weight: bold;
+  color: rgb(38, 0, 255);
+  margin-top: 10px;
+  position:absolute;
+  top: 80px;
+  left: 40px;
 }
