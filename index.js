@@ -9,6 +9,7 @@ const user2score_span = document.getElementById("user2-score");
 const computerscore_span = document.getElementById("computer-score");
 const resultMessage = document.getElementById("result-message");
 const actionMessage = document.getElementById("action-message");
+const roundsLeftDisplay = document.getElementById("rounds-left"); // <--- add this element in HTML
 
 function getComputerChoice() {
   const choices = ["r", "p", "s"];
@@ -81,9 +82,11 @@ function game(user1choice, user2choice) {
   user2score_span.innerText = user2score;
   computerscore_span.innerText = computerscore;
 
+  const roundsLeft = maxRounds - round;
   if (round >= maxRounds) {
     showFinalWinner();
   } else {
+    roundsLeftDisplay.innerText = `Rounds left: ${roundsLeft}`;
     actionMessage.innerText = "Make your move!";
   }
 }
@@ -102,6 +105,7 @@ function showFinalWinner() {
   }
 
   actionMessage.innerText = "Game Over!";
+  roundsLeftDisplay.innerText = "";
 }
 
 let tempChoices = {};
@@ -117,24 +121,42 @@ function setChoice(player, choice) {
 }
 
 function createChoiceImages() {
-    const choices = {
-        "user1-r": "rock.png",
-        "user1-p": "paper.png",
-        "user1-s": "scissors.png",
-        "user2-r": "rock.png",
-        "user2-p": "paper.png",
-        "user2-s": "scissors.png"
-    };
+  const choices = {
+    "user1-r": "rock.png",
+    "user1-p": "paper.png",
+    "user1-s": "scissors.png",
+    "user2-r": "rock.png",
+    "user2-p": "paper.png",
+    "user2-s": "scissors.png"
+  };
 
-    for (const id in choices) {
-        const choiceDiv = document.getElementById(id);
-        if (choiceDiv) {
-            const img = document.createElement("img");
-            img.src = `image/${choices[id]}`;
-            choiceDiv.appendChild(img);
-        }
+  for (const id in choices) {
+    const choiceDiv = document.getElementById(id);
+    if (choiceDiv) {
+      const img = document.createElement("img");
+      img.src = `image/${choices[id]}`;
+      choiceDiv.appendChild(img);
     }
+  }
 }
+
+function resetGame() {
+  user1score = 0;
+  user2score = 0;
+  computerscore = 0;
+  round = 0;
+  tempChoices = {};
+
+  user1score_span.innerText = user1score;
+  user2score_span.innerText = user2score;
+  computerscore_span.innerText = computerscore;
+
+  resultMessage.innerText = "Game reset! Ready to play again.";
+  actionMessage.innerText = "Make your move!";
+  roundsLeftDisplay.innerText = `Rounds left: ${maxRounds}`;
+}
+
+document.getElementById("reset-btn").addEventListener("click", resetGame);
 
 createChoiceImages();
 
